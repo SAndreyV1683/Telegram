@@ -5,6 +5,8 @@ import android.os.Bundle
 import a.sboev.mytelegramclone.R
 import a.sboev.mytelegramclone.databinding.ActivityRegisterBinding
 import a.sboev.mytelegramclone.ui.fragments.EnterPhoneNumberFragment
+import a.sboev.mytelegramclone.utils.replaceActivity
+import a.sboev.mytelegramclone.utils.replaceFragment
 import androidx.appcompat.widget.Toolbar
 
 class RegisterActivity : AppCompatActivity() {
@@ -22,6 +24,6 @@ class RegisterActivity : AppCompatActivity() {
         mToolbar = mBinding.registerToolbar
         setSupportActionBar(mToolbar)
         title = getString(R.string.register_title_your_phone)
-        supportFragmentManager.beginTransaction().add(R.id.register_data_container, EnterPhoneNumberFragment()).commit()
+        replaceFragment(EnterPhoneNumberFragment(), false)
     }
 }

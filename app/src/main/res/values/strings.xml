@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">MyTelegramClone</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_chats_fragment">Chats</string>
     <string name="hello_settings_fragment">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings_default_username">Yura Petrov</string>
     <string name="settings_default_status">В сети</string>
@@ -21,4 +19,5 @@
     <string name="register_hint_default_code">_ _ _ _ _ _</string>
     <string name="register_title_your_phone">Ваш телефон</string>
     <string name="register_toast_enter_phone">Введите номер телефона</string>
+    <string name="register_input_phone_number_hint">Введите номер телефона</string>
 </resources>

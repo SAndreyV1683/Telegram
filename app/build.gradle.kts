@@ -1,13 +1,14 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 
 }
 
 android {
     namespace = "a.sboev.mytelegramclone"
     compileSdk = 34
-    //viewBinding.isEnabled = true
+    viewBinding.isEnabled = true
     defaultConfig {
         applicationId = "a.sboev.mytelegramclone"
         minSdk = 29
@@ -35,9 +36,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
+
 }
 
 dependencies {
@@ -46,6 +45,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.firebase:firebase-auth:22.2.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -58,7 +58,7 @@ dependencies {
 
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     runtimeOnly("androidx.annotation:annotation:1.7.0")
-    implementation ("com.google.android.material:material:1.5.0-alpha05")
+    implementation ("com.google.android.material:material:1.11.0-alpha03")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")

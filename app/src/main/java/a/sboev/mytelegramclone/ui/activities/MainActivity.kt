@@ -1,15 +1,19 @@
-package a.sboev.mytelegramclone
+package a.sboev.mytelegramclone.ui.activities
 
 import a.sboev.mytelegramclone.databinding.ActivityMainBinding
 import a.sboev.mytelegramclone.ui.activities.RegisterActivity
 import a.sboev.mytelegramclone.ui.fragments.ChatsFragment
 import a.sboev.mytelegramclone.ui.objects.AppDrawer
+import a.sboev.mytelegramclone.utils.AUTH
+import a.sboev.mytelegramclone.utils.replaceActivity
+import a.sboev.mytelegramclone.utils.replaceFragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mToolbar: Toolbar
     private lateinit var mAppDrawer: AppDrawer
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,20 +37,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (false) {
+        if (AUTH.currentUser != null){
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction().replace(R.id.data_container, ChatsFragment()).commit()
+            replaceFragment(ChatsFragment(), false)
         } else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
-
     }
 
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+        AUTH = FirebaseAuth.getInstance()
     }
 
 
