@@ -1,12 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
 }
 
 android {
     namespace = "a.sboev.mytelegramclone"
     compileSdk = 34
-    viewBinding.isEnabled = true
+    //viewBinding.isEnabled = true
     defaultConfig {
         applicationId = "a.sboev.mytelegramclone"
         minSdk = 29
@@ -33,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -44,7 +49,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
+    implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("com.mikepenz:materialdrawer:7.0.0")
     implementation("com.mikepenz:materialdrawer-nav:7.0.0")
 

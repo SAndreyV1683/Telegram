@@ -10,12 +10,9 @@ import a.sboev.mytelegramclone.R
 
 open class BaseFragment(private val layout: Int) : Fragment() {
 
-    private lateinit var mRootView: View
+    open lateinit var mRootView: View
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mRootView = inflater.inflate(layout, container,  false)
         return mRootView
     }

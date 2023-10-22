@@ -1,8 +1,10 @@
 package a.sboev.mytelegramclone
 
 import a.sboev.mytelegramclone.databinding.ActivityMainBinding
+import a.sboev.mytelegramclone.ui.activities.RegisterActivity
 import a.sboev.mytelegramclone.ui.fragments.ChatsFragment
 import a.sboev.mytelegramclone.ui.objects.AppDrawer
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -30,9 +32,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction().replace(R.id.data_container, ChatsFragment()).commit()
+        if (false) {
+            setSupportActionBar(mToolbar)
+            mAppDrawer.create()
+            supportFragmentManager.beginTransaction().replace(R.id.data_container, ChatsFragment()).commit()
+        } else {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun initFields() {
